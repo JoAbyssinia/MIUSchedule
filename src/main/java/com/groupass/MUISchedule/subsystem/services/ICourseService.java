@@ -1,7 +1,6 @@
 package com.groupass.MUISchedule.subsystem.services;
 
 import com.groupass.MUISchedule.subsystem.entities.Course;
-import com.groupass.MUISchedule.subsystem.entities.Student;
 
 import java.util.List;
 

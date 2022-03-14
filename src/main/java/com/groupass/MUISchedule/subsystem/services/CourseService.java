@@ -1,7 +1,6 @@
 package com.groupass.MUISchedule.subsystem.services;
 
 import com.groupass.MUISchedule.subsystem.entities.Course;
-import com.groupass.MUISchedule.subsystem.entities.Student;
 import com.groupass.MUISchedule.subsystem.repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +23,7 @@ public class CourseService implements ICourseService {
     public Course findById(Long id) {
         return courseRepository.findById(id).get();
     }
+
     @Override
     public List<Course> getAllCourses() {
         return courseRepository.findAll();
