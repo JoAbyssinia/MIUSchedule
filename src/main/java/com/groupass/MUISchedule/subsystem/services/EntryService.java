@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class EntryService implements IEntry{
+public class EntryService implements IEntryService {
     @Autowired
     private EntryRepository entryRepository;
     @Override

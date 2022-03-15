@@ -4,7 +4,7 @@ import com.groupass.MUISchedule.subsystem.entities.Faculty;
 
 import java.util.List;
 
-public interface IFaculty {
+public interface IFacultyService {
 
     Faculty getFacultyById(Long id);
 
