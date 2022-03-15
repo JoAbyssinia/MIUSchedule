@@ -14,13 +14,18 @@ public class FacultyController {
     private IFacultyService facultyService;
 
     @GetMapping
-    public List<Faculty> getAllFaculties(){
+    public List<Faculty> getAllFaculties() {
         return facultyService.getAllFaculties();
     }
 
     @PostMapping
-    public Faculty saveFaculty(@RequestBody Faculty faculty){
+    public Faculty saveFaculty(@RequestBody Faculty faculty) {
         return facultyService.saveFaculty(faculty);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteFaculty(@PathVariable Long id) {
+        facultyService.deleteFacultyById(id);
     }
 
 }

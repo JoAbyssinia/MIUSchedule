@@ -24,7 +24,7 @@ public class Black_CourseService implements IBlock_CourseService {
     }
 
     @Override
-    public List<Block_Course> getAllSections() {
+    public List<Block_Course> getAllBlockCourses() {
         return block_courseRepository.findAll();
     }
 

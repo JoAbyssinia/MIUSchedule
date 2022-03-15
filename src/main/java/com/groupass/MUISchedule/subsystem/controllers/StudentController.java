@@ -15,7 +15,7 @@ public class StudentController {
     private IStudentService studentService;
 
     @GetMapping("/")
-    public List<Student> getAllFaculty(){
+    public List<Student> getAllStudent(){
         return studentService.getAllStudent();
     }
 
