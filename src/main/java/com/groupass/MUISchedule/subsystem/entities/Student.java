@@ -1,5 +1,6 @@
 package com.groupass.MUISchedule.subsystem.entities;
 
+import com.groupass.MUISchedule.mainsystem.entities.Users;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,6 +20,9 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
+
+    @OneToOne
+    private Users users;
 
     private String firstName;
 

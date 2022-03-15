@@ -12,7 +12,7 @@ public interface IBlock_CourseService {
 
     Block_Course findById(Long id);
 
-    List<Block_Course> getAllSections();
+    List<Block_Course> getAllBlockCourses();
 
     void deleteById(Long id);
 
