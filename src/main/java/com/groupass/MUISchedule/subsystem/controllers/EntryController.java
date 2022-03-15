@@ -20,7 +20,7 @@ public class EntryController {
     }
 
     @PostMapping("/")
-    public Entry saveEntry(Entry entry) {
+    public Entry saveEntry(@RequestBody Entry entry) {
         return entryService.saveEntry(entry);
     }
 

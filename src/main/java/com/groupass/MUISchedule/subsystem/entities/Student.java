@@ -1,6 +1,7 @@
 package com.groupass.MUISchedule.subsystem.entities;
 
 import com.groupass.MUISchedule.mainsystem.entities.Users;
+import com.groupass.MUISchedule.mainsystem.utils.UserType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,9 +22,6 @@ public class Student {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @OneToOne
-    private Users users;
-
     private String firstName;
 
     private String lastName;
@@ -36,4 +34,10 @@ public class Student {
 
     @OneToMany
     private List<Section> sections;
+
+    public Users createUser(){
+
+        return new Users(null,(firstName + lastName).toLowerCase(),
+                "123456789","", UserType.STU, this);
+    }
 }

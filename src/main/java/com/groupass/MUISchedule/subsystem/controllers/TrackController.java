@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/block")
+@RequestMapping("/track")
 public class TrackController {
 
     @Autowired
@@ -21,7 +21,7 @@ public class TrackController {
     }
 
     @PostMapping("/")
-    public Track saveTrack(Track track) {
+    public Track saveTrack(@RequestBody Track track) {
         return trackService.save(track);
     }
 
