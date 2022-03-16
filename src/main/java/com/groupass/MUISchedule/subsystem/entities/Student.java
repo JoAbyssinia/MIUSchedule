@@ -38,6 +38,6 @@ public class Student {
     public Users createUser(){
 
         return new Users(null,(firstName + lastName).toLowerCase(),
-                "123456789","", UserType.STU, this);
+                "123456789","", UserType.STU, this,null);
     }
 }
