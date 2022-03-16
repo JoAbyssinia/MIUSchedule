@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/priority")
+@CrossOrigin
 public class PriorityController {
 
     @Autowired

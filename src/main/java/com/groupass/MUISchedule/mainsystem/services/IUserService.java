@@ -18,5 +18,7 @@ public interface IUserService {
 
     void deleteById(Long id);
 
+    boolean logout(Long id);
+
 
 }
