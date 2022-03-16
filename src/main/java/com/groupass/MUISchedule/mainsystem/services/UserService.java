@@ -2,13 +2,10 @@ package com.groupass.MUISchedule.mainsystem.services;
 
 import com.groupass.MUISchedule.mainsystem.entities.Users;
 import com.groupass.MUISchedule.mainsystem.repository.UserRepository;
-
-import com.groupass.MUISchedule.subsystem.entities.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
-
 
 import java.util.Optional;
 import java.util.UUID;
@@ -23,9 +20,9 @@ public class UserService implements IUserService {
     public Optional<Users> login(String username, String password) {
 
         Optional<Users> user = userRepository.login(username, password);
-        if (user.isPresent()){
+        if (user.isPresent()) {
             String token = UUID.randomUUID().toString();
-            Users u= user.get();
+            Users u = user.get();
             u.setToken(token);
             userRepository.save(u);
             return user;
@@ -37,9 +34,9 @@ public class UserService implements IUserService {
     public Optional<User> findByToken(String token) {
 
         Optional<Users> user = userRepository.findByToken(token);
-        if (user.isPresent()){
+        if (user.isPresent()) {
             Users u = user.get();
-            User users1 = new User(u.getUsername(),u.getPassword(),true,true,true,true,
+            User users1 = new User(u.getUsername(), u.getPassword(), true, true, true, true,
                     AuthorityUtils.createAuthorityList("USER"));
             return Optional.of(users1);
         }
