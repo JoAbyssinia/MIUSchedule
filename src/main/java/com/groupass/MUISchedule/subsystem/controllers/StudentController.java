@@ -1,5 +1,6 @@
 package com.groupass.MUISchedule.subsystem.controllers;
 
+import com.groupass.MUISchedule.mainsystem.services.IUserService;
 import com.groupass.MUISchedule.subsystem.entities.Student;
 import com.groupass.MUISchedule.subsystem.services.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +15,14 @@ public class StudentController {
     @Autowired
     private IStudentService studentService;
 
+
     @GetMapping("/")
-    public List<Student> getAllFaculty(){
+    public List<Student> getAllStudent(){
         return studentService.getAllStudent();
     }
 
     @PostMapping("/")
-    public Student saveStudent(Student student){
+    public Student saveStudent(@RequestBody Student student){
         return studentService.save(student);
     }
 

@@ -6,6 +6,7 @@ import com.groupass.MUISchedule.subsystem.entities.Track;
 import java.util.List;
 
 public interface ITrackService {
+
     Track save(Track track);
 
     Track findById(Long id);

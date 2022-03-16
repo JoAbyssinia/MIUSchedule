@@ -1,5 +1,7 @@
 package com.groupass.MUISchedule.subsystem.services;
 
+import com.groupass.MUISchedule.mainsystem.entities.Users;
+import com.groupass.MUISchedule.mainsystem.services.IUserService;
 import com.groupass.MUISchedule.subsystem.entities.Faculty;
 import com.groupass.MUISchedule.subsystem.repository.FacultyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,9 @@ public class FacultyService implements IFacultyService {
     @Autowired
     private FacultyRepository facultyRepository;
 
+    @Autowired
+    private IUserService userService;
+
     @Override
     public Faculty getFacultyById(Long id) {
         return facultyRepository.getById(id);
@@ -19,7 +24,10 @@ public class FacultyService implements IFacultyService {
 
     @Override
     public Faculty saveFaculty(Faculty faculty) {
-        return facultyRepository.save(faculty);
+        Faculty f = facultyRepository.save(faculty);
+        Users users = f.createUser();
+        userService.save(users);
+        return f;
     }
 
     @Override

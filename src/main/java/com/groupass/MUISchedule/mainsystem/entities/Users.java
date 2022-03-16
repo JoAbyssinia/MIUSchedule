@@ -1,5 +1,8 @@
 package com.groupass.MUISchedule.mainsystem.entities;
 
+import com.groupass.MUISchedule.mainsystem.utils.UserType;
+import com.groupass.MUISchedule.subsystem.entities.Faculty;
+import com.groupass.MUISchedule.subsystem.entities.Student;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,7 +28,14 @@ public class Users {
 
     private String token;
 
+    private UserType role;
+
     @OneToOne
-    private Role role;
+    private Student student;
+
+    @OneToOne
+    private Faculty faculty;
+
+
 
 }
