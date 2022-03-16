@@ -24,5 +24,5 @@ public class Course {
     private String title;
 
     @OneToMany
-    private List<Course> courses;
+    private List<Course> prerequisite;
 }
