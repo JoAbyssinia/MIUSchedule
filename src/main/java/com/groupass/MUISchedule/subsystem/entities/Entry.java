@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.util.*;
 
 @Entity
 @AllArgsConstructor
@@ -29,6 +29,8 @@ public class Entry {
 
     private int noStudent;
 
-
     private int year;
+
+    @OneToMany
+    private List<Block> blockSet = new ArrayList<>();
 }
