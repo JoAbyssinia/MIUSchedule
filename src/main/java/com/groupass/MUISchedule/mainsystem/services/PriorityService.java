@@ -5,6 +5,7 @@ import com.groupass.MUISchedule.mainsystem.repository.PriorityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -31,5 +32,10 @@ public class PriorityService implements IPriorityService {
     @Override
     public void deleteById(Long id) {
         priorityRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Priority> findByIdList(Long id) {
+        return priorityRepository.findPrioritiesById(id);
     }
 }

@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/blockcourses")
 @CrossOrigin
-public class BlockCouserController {
+public class BlockCourseController {
 
     @Autowired
     private IBlock_CourseService blockCourseService;

@@ -20,4 +20,10 @@ public class UsersController {
         return userService.findById(id);
     }
 
+    @GetMapping("/api/logout/{id}")
+    public boolean logout(@PathVariable Long id){
+        return userService.logout(id);
+    }
+
+
 }

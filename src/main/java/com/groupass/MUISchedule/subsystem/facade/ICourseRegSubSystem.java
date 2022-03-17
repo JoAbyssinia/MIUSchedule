@@ -10,6 +10,8 @@ public interface ICourseRegSubSystem {
 
     Entry getEntry(Student student);
 
+    Entry getEntryById(Long id);
+
     List<Block> getBlocks(Entry entry);
 
     Section getSection(Long id);
@@ -23,4 +25,7 @@ public interface ICourseRegSubSystem {
     Student saveStudent(Student student);
 
     Section saveSection(Section section);
+
+    List<Student> getStudentByEntry(Entry entry);
+
 }

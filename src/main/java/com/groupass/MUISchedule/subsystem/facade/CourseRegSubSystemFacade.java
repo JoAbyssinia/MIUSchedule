@@ -1,6 +1,7 @@
 package com.groupass.MUISchedule.subsystem.facade;
 
 import com.groupass.MUISchedule.subsystem.entities.*;
+import com.groupass.MUISchedule.subsystem.services.IEntryService;
 import com.groupass.MUISchedule.subsystem.services.ISectionService;
 import com.groupass.MUISchedule.subsystem.services.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,8 @@ public class CourseRegSubSystemFacade implements ICourseRegSubSystem{
     @Autowired
     private IStudentService studentService;
 
+    @Autowired
+    private IEntryService entryService;
 
     @Autowired
     private ISectionService sectionService;
@@ -23,6 +26,11 @@ public class CourseRegSubSystemFacade implements ICourseRegSubSystem{
     @Override
     public Entry getEntry(Student student) {
         return student.getEntry();
+    }
+
+    @Override
+    public Entry getEntryById(Long id) {
+        return entryService.getEntryById(id);
     }
 
     @Override
@@ -59,4 +67,11 @@ public class CourseRegSubSystemFacade implements ICourseRegSubSystem{
     public Section saveSection(Section section) {
         return sectionService.save(section);
     }
+
+    @Override
+    public List<Student> getStudentByEntry(Entry entry) {
+        return studentService.getAllStudent();
+    }
+
+
 }

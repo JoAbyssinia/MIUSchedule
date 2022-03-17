@@ -14,4 +14,7 @@ public interface IPriorityService {
     List<Priority> getAllPriority();
 
     void deleteById(Long id);
+
+    List<Priority> findByIdList(Long id);
+
 }
