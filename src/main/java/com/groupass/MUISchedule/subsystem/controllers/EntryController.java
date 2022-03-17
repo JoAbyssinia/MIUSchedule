@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/entry")
+@CrossOrigin
 public class EntryController {
 
     @Autowired

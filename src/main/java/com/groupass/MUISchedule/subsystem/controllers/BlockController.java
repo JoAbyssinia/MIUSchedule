@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/block")
+@CrossOrigin
 public class BlockController {
 
     @Autowired

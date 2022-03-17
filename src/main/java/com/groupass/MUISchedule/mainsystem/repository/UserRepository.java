@@ -16,6 +16,8 @@ public interface UserRepository extends JpaRepository<Users,Long> {
 
     Optional<Users> findByToken(String token);
 
+    @Query(value = "UPDATE Users u SET u.token='' WHERE u.id = ?1")
+    boolean logout(Long id);
 
 
 }

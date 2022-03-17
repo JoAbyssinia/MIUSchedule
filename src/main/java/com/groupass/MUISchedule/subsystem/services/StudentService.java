@@ -5,6 +5,7 @@ import com.groupass.MUISchedule.mainsystem.repository.UserRepository;
 import com.groupass.MUISchedule.mainsystem.services.IUserService;
 import com.groupass.MUISchedule.mainsystem.services.UserService;
 import com.groupass.MUISchedule.mainsystem.utils.UserType;
+import com.groupass.MUISchedule.subsystem.entities.Entry;
 import com.groupass.MUISchedule.subsystem.entities.Student;
 import com.groupass.MUISchedule.subsystem.repository.StudentRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -44,5 +45,10 @@ public class StudentService implements IStudentService {
     @Override
     public void deleteById(Long id) {
         studentRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Student> getStudentByEntry(Entry entry) {
+        return null;
     }
 }

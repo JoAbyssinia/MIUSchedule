@@ -16,6 +16,7 @@ public class UserService implements IUserService {
     @Autowired
     private UserRepository userRepository;
 
+
     @Override
     public Optional<Users> login(String username, String password) {
 
@@ -58,5 +59,10 @@ public class UserService implements IUserService {
     @Override
     public void deleteById(Long id) {
         userRepository.deleteById(id);
+    }
+
+    @Override
+    public boolean logout(Long id) {
+        return userRepository.logout(id);
     }
 }

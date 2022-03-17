@@ -1,6 +1,6 @@
-package com.groupass.MUISchedule.subsystem.entities;
+package com.groupass.MUISchedule.mainsystem.dto;
 
-
+import com.groupass.MUISchedule.subsystem.entities.Block;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,27 +11,25 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@Entity
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class Block {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
+public class Entry {
+
     private Long id;
 
     private String name;
 
-    @Temporal(TemporalType.DATE)
     private Date startDate;
 
-    @Temporal(TemporalType.DATE)
     private Date endDate;
 
+    private int noStudent;
+
+    private int year;
+
     @OneToMany
-    private List<Section> sectionList = new ArrayList<>();
-
-
+    private List<Block> blockSet = new ArrayList<>();
 }

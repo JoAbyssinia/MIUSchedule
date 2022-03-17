@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -26,7 +27,7 @@ public class Faculty{
     private String lastName;
 
     @ElementCollection
-    private List<String> speciality ;
+    private List<String> speciality = new ArrayList<>(); ;
 
     public Users createUser(){
         return new Users(null,(firstName + lastName).toLowerCase(),

@@ -32,8 +32,6 @@ public class Student {
     @ManyToOne
     private Entry entry;
 
-    @OneToMany
-    private List<Section> sections;
 
     public Users createUser(){
 
