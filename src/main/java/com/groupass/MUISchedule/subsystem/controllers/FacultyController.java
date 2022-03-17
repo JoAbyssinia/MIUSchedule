@@ -24,9 +24,9 @@ public class FacultyController {
         return facultyService.saveFaculty(faculty);
     }
 
-    @DeleteMapping
-    public void deleteFaculty(@RequestBody Faculty faculty) {
-        facultyService.deleteFaculty(faculty);
+    @DeleteMapping("/{id}")
+    public void deleteFaculty(@PathVariable Long id) {
+        facultyService.deleteFacultyById(id);
     }
 
 }
